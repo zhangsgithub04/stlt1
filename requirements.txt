@@ -3,6 +3,6 @@ langchain
 transformers
 torch
 openai
-langchain-openai
+langchain_openai
 
 langchain_core
