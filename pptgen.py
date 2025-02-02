@@ -1,5 +1,7 @@
 import os
-from langchain.chains.qa import QA
+#from langchain.chains.qa import QA
+from langchain.chains.retrieval_qa import RetrievalQA
+                     
 import streamlit as st
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
@@ -26,6 +28,13 @@ topic_generation_prompt = PromptTemplate(
 topic = input("Enter a topic idea: ")
 
 # Suggest template ideas
+
+# Initialize the Retrieval QA chain
+retrieval_qa = RetrievalQA.from_llm(llm=llm)
+
+# Use the Retrieval QA chain to answer a question
+answer = retrieval_qa({"question": "Your question here", "num_results": 5}
+                      
 template_suggestion_chain = QA(prompt=template_suggestion_prompt, llm=llm)
 template_ideas = template_suggestion_chain({"topic": topic})
 
