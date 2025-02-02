@@ -4,7 +4,7 @@ from langchain_openai import OpenAI
 from langchain_core.prompts import PromptTemplate
 
 # Set OpenAI organization
-os.environ["OPENAI_ORGANIZATION"] = st.secrets["open_ai_api"]
+os.environ["OPENAI_ORGANIZATION"] = st.secrets["openai_api_key"]
 
 # Initialize LLM
 llm = OpenAI()
