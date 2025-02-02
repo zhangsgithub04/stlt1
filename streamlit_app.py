@@ -1,5 +1,6 @@
 import streamlit as st
-from langchain.llms import OpenAI
+#from langchain.llms import OpenAI
+from langchain.llms.openai import OpenAI
 from langchain import PromptTemplate
 
 st.set_page_config(page_title="🦜🔗 Blog Outline Generator App")
