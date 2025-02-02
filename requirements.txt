@@ -2,4 +2,5 @@ streamlit
 langchain
 transformers
 torch
-openai 
+openai
+langchain-openai
