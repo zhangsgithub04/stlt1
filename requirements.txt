@@ -4,3 +4,5 @@ transformers
 torch
 openai
 langchain-openai
+
+langchain_core
