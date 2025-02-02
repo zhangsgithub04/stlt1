@@ -1,10 +1,11 @@
 import os
 from langchain.chains.qa import QA
+from streamlit as st
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 
 # Set OpenAI API key
-os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
+os.environ["OPENAI_API_KEY"] = st.secrets["openai_api_key"]
 
 # Initialize LLM
 llm = OpenAI()
