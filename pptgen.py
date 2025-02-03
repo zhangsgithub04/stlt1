@@ -32,11 +32,13 @@ topic = input("Enter a topic idea: ")
 # Initialize the Retrieval QA chain
 retrieval_qa = RetrievalQA.from_llm(llm=llm)
 
+question1="Suggest 5 template ideas for the following topic: }+ topic;
+
 # Use the Retrieval QA chain to answer a question
-answer = retrieval_qa({"question": "Your question here", "num_results": 5}
+template_ideas = retrieval_qa({"question": question1, "num_results": 5}
                       
-template_suggestion_chain = QA(prompt=template_suggestion_prompt, llm=llm)
-template_ideas = template_suggestion_chain({"topic": topic})
+//template_suggestion_chain = QA(prompt=template_suggestion_prompt, llm=llm)
+//template_ideas = template_suggestion_chain({"topic": topic})
 
 # Display template ideas
 print("Template Ideas:")
@@ -48,8 +50,13 @@ selected_template_index = int(input("Enter the number of the template idea you'd
 selected_template = template_ideas[selected_template_index - 1]
 
 # Generate a topic based on the selected template
-topic_generation_chain = QA(prompt=topic_generation_prompt, llm=llm)
-generated_topic = topic_generation_chain({"template": selected_template, "topic": topic})
+question2="Generate a topic based on the following template:" + selected_template+". The topic is about "+ topic+".";
+
+# Use the Retrieval QA chain to answer a question
+ generated_topic= retrieval_qa({"question": question2, "num_results": 5}
+                              
+//topic_generation_chain = QA(prompt=topic_generation_prompt, llm=llm)
+//generated_topic = topic_generation_chain({"template": selected_template, "topic": topic})
 
 # Display generated topic
 print("Generated topic:")
