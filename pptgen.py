@@ -32,7 +32,7 @@ topic = input("Enter a topic idea: ")
 # Initialize the Retrieval QA chain
 retrieval_qa = RetrievalQA.from_llm(llm=llm)
 
-question1="Suggest 5 template ideas for the following topic: }+ topic;
+question1="Suggest 5 template ideas for the following topic: "+ topic;
 
 # Use the Retrieval QA chain to answer a question
 template_ideas = retrieval_qa({"question": question1, "num_results": 5}
