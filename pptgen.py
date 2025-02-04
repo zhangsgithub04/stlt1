@@ -37,8 +37,8 @@ question1="Suggest 5 template ideas for the following topic: "+ topic;
 # Use the Retrieval QA chain to answer a question
 template_ideas = retrieval_qa({"question": question1, "num_results": 5});
                       
-//template_suggestion_chain = QA(prompt=template_suggestion_prompt, llm=llm)
-//template_ideas = template_suggestion_chain({"topic": topic})
+#template_suggestion_chain = QA(prompt=template_suggestion_prompt, llm=llm)
+#template_ideas = template_suggestion_chain({"topic": topic})
 
 # Display template ideas
 print("Template Ideas:")
@@ -55,8 +55,8 @@ question2="Generate a topic based on the following template:" + selected_templat
 # Use the Retrieval QA chain to answer a question
  generated_topic= retrieval_qa({"question": question2, "num_results": 5})
                               
-//topic_generation_chain = QA(prompt=topic_generation_prompt, llm=llm)
-//generated_topic = topic_generation_chain({"template": selected_template, "topic": topic})
+#topic_generation_chain = QA(prompt=topic_generation_prompt, llm=llm)
+#generated_topic = topic_generation_chain({"template": selected_template, "topic": topic})
 
 # Display generated topic
 print("Generated topic:")
