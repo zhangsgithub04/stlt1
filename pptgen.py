@@ -53,7 +53,7 @@ selected_template = template_ideas[selected_template_index - 1]
 question2="Generate a topic based on the following template:" + selected_template+". The topic is about "+ topic+".";
 
 # Use the Retrieval QA chain to answer a question
- generated_topic= retrieval_qa({"question": question2, "num_results": 5})
+generated_topic= retrieval_qa({"question": question2, "num_results": 5})
                               
 #topic_generation_chain = QA(prompt=topic_generation_prompt, llm=llm)
 #generated_topic = topic_generation_chain({"template": selected_template, "topic": topic})
